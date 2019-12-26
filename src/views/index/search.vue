@@ -7,8 +7,7 @@
     </div>
     <div class="top_2">
       <p class="month" @click="istime">{{time}}</p>
-      <p class="week">周二</p>
-      <p class="day">明天</p>
+      <p class="week">{{week}}</p>
     </div>
     <div class="top_3">
 
@@ -21,9 +20,10 @@
 export default {
   data () {
     return {
-				 gocity: localStorage.getItem('startcity'),
-				 tocity: localStorage.getItem('tocity'),
-				 time: localStorage.getItem('time')
+      gocity: localStorage.getItem('startcity'),
+      tocity: localStorage.getItem('tocity'),
+      time: localStorage.getItem('time'),
+      week: ''
     }
   },
   methods: {
@@ -36,37 +36,50 @@ export default {
     istime () {
       this.$router.push('/Isday')
     }
-  }
 
+  }
+  // mounted() {
+  //   var dt = new Date();
+  //   var weekDay = ["周天", "周一", "周二", "周三", "周四", "周五", "周六"];
+  //   this.week = weekDay[dt.getDay()]
+
+  // }
 }
 </script>
 
 <style scoped lang="scss">
-  .mybody{
+  .mybody {
     width: 100%;
-    height:1.75rem;
-    .top_1{
+    height: 1.75rem;
+
+    .top_1 {
       // width:100%;
       width: 3.35rem;
-      height:0.5rem;
+      height: 0.5rem;
       padding: 0.1rem;
       border-bottom: 0.01rem solid #ccc;
       line-height: .5rem;
       font-weight: 600;
       margin: 0 auto;
-      p{
-        font-size:0.237rem;
+
+      p {
+        font-size: 0.237rem;
         color: #333;
       }
-      .from{
+
+      .from {
         float: left;
       }
-      .add{
+
+      .add {
         float: right;
       }
-      span{
+      .week{
+        margin-left: 0.5rem;
+      }
+      span {
         width: 0.41rem;
-        height:0.41rem;
+        height: 0.41rem;
         display: inline-block;
         background-image: url(https://m.changtu.com/_nuxt/img/change_ico.fc2be47.png);
         background-repeat: no-repeat;
@@ -74,45 +87,50 @@ export default {
         margin-left: 0.85rem;
       }
     }
-    .top_2{
+
+    .top_2 {
       width: 3.35rem;
       height: 0.5rem;
       line-height: .5rem;
       margin: 0 auto;
-          p{
-            float: left;
-            display: inline-block;
-            font-weight: 600;
-            font-size: 0.21rem;
-            // margin-right: 0.2rem;
-            color: #333;
-          }
-          .month{
-            font-weight: 600;
-            font-size: 0.21rem;
-            margin-left: 0.1rem;
-          }
 
-          .week{
-            font-weight: 600;
-            font-size: 0.21rem;
-          }
+      p {
+        float: left;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 0.21rem;
+        // margin-right: 0.2rem;
+        color: #333;
       }
-      .top_3{
+
+      .month {
+        font-weight: 600;
+        font-size: 0.21rem;
+        margin:0 0.2rem
+      }
+
+      .week {
+        font-weight: 600;
+        font-size: 0.21rem;
+      }
+    }
+
+    .top_3 {
+      width: 3.35rem;
+      height: 0.44rem;
+      // padding: 0.05rem 0.12rem 0.2rem;
+      margin: 0 auto;
+
+      button {
         width: 3.35rem;
         height: 0.44rem;
-        // padding: 0.05rem 0.12rem 0.2rem;
-        margin: 0 auto;
-        button{
-          width: 3.35rem;
-          height: 0.44rem;
-          background: #FF6600;
-          border-radius: 0.2rem;
-          border: 0;
-          font-size: 0.18rem;
-          color: #fff;
-          line-height: .44rem;
-        }
+        background: #FF6600;
+        border-radius: 0.2rem;
+        border: 0;
+        font-size: 0.18rem;
+        color: #fff;
+        line-height: .44rem;
       }
-}
+    }
+  }
 </style>

@@ -14,6 +14,7 @@ export default {
   methods: {
     clickDay (data) {
       localStorage.setItem('time', data)
+      this.$router.push('/index')
     },
     changeDate (data) {
       console.log(data)

@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 import axios from 'axios'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
@@ -76,7 +76,7 @@ export default {
       this.dataright = res.data.data.floor[0].floorContents[3].questionList
       this.datalist = res.data.data.floor[0].floorContents
 
-      var swiper1 = new Swiper('.myswiper', {
+      new Swiper('.myswiper', {
         direction: 'vertical',
         observer: true,
         observeParents: true,

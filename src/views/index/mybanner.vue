@@ -44,7 +44,7 @@ export default {
     ).then(res => {
       this.datalist = res.data.detail.advList
       console.log(this.datalist)
-      var swiper1 = new Swiper('.swiper1', {
+      new Swiper('.swiper1', {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 30,
