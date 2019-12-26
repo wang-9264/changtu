@@ -22,6 +22,10 @@
 .bar{
     width: 100%;
     border-bottom: 1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 33;
 }
 ul{
     list-style: none;

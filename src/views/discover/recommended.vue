@@ -14,7 +14,7 @@
                 <waterfall :line-gap="172.5" :watch="items">
                 <waterfall-slot
                 v-for="(item, index) in items"
-                :width="item.width"
+                :width="172.5"
 
                 :height="item.height"
                 :order="index"
@@ -57,6 +57,7 @@ import Axios from 'axios'
 import swiper from './discocer_swiper'
 import Waterfall from 'vue-waterfall/lib/waterfall'
 import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot'
+import { Indicator } from 'mint-ui'
 export default {
 //   components: {
 //     Waterfall,
@@ -76,6 +77,10 @@ export default {
     WaterfallSlot
   },
   mounted () {
+    Indicator.open({
+      text: '加载中...',
+      spinnerType: 'fading-circle'
+    })
     Axios.post('/middlemobile/discovery/queryStickyMedia.htm', 'timeStamp=1576911232062&uniqueId=15768107854190.773148202536406&tFlag=1&flowCode=15768937226810.4433462746303658&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch').then(res => {
     //   console.log(res.data.detail)
       this.datalist = res.data.detail
@@ -88,17 +93,12 @@ export default {
         if ((resp.data.detail.datInfoList[i]).seceneryInfo !== undefined) {
           this.items.push((resp.data.detail.datInfoList[i]).seceneryInfo)
         }
-        console.log(this.items)
+        // console.log(this.items)
       }
       for (var data of this.items) {
-        data.height = String(Number(data.height) + 400)
+        data.height = String((Number(data.height) * (172.5 / Number(data.width))) + 54)
       }
-
-      console.log(this.items)
-    //   for (var j = 0; j < this.items.length; j++) {
-    //     this.lilist.push(((this.items[j].height)*(172.5/(this.items[j].width)))+92)
-    //     // console.log(this.lilist, 2222222222)
-    //   }
+      Indicator.close()
     })
   }
 }
@@ -122,7 +122,7 @@ export default {
         // width: 0.21rem;
         height: 0.38rem;
         float: left;
-        margin-left: 0.01rem;
+        margin-left: 0.05rem;
         // margin-top: 0.05rem;
     }
     .remhotInfo{
@@ -134,6 +134,7 @@ export default {
             line-height: 12px;
             margin-top: 0.0325rem;
             margin-top: 0.05rem;
+            margin-left: 0.3rem;
             }
         }
 }
@@ -174,7 +175,7 @@ export default {
                         background: rgba(0,0,0,.5);
                         color: #fff;
                         border-radius: 0.2rem;
-                        line-height: 12px;
+                        line-height: 0.12rem;
                         padding: 0 1px 0 5px;
                         font-size: 12px;
                         text-align: center;

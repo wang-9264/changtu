@@ -59,6 +59,7 @@ export default {
     background: white;
     margin-bottom: 0.07rem;
     padding-top: 0.08rem;
+    margin-top: 0.44rem;
     .swiper-wrapper{
         .swiper-slide{
         text-align: center;
@@ -68,6 +69,9 @@ export default {
         }
         p{
             font-size: 12px;
+            font-weight: 400;
+            color: #333333;
+            font-family: "\\5FAE软雅黑"
         }
         }
         // float: left;

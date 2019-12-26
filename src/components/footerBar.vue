@@ -75,13 +75,15 @@ ul{
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 3.75rem;
+  width: 3.76rem;
+  // width: 100%;
   height: 0.49rem;
   list-style: none;
   box-shadow: -0.02rem -0.02rem 0.1rem 0 rgba(0,0,0,.2);
   li{
   flex: 1;
-   display: flex;
+  // justify-content: space-around;
+  display: flex;
   flex-direction:column;
   align-items:center;
   text-align: center;
