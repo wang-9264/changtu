@@ -17,10 +17,10 @@ export default {
       this.$router.push('/index')
     },
     changeDate (data) {
-      console.log(data)
+      // console.log(data)
     },
     clickToday (data) {
-      console.log(data)
+      // console.log(data)
     }
 
   }
