@@ -15,7 +15,7 @@
       <!-- {{index}} -->
     </li>
     <li v-for="data in dataloot" :key="data.PK_CITY_ID">
-      {{data}}
+      {{data.showName}}
     </li>
   </div>
 </template>
@@ -41,9 +41,6 @@ export default {
       this.datalist = res.data.detail.hotBookList
       this.dataloot = res.data.detail.allBookCityMap
       console.log(this.dataloot)
-      // console.log(this.datalist.length)
-      // this.$nextTick(()=>{
-      // new Swiper('.' + (this.swipername ? this.swipername : 'kerwin'), { ...defaultProps, ...this.options })
     })
   }
 }

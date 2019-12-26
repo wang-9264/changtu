@@ -30,7 +30,7 @@ export default {
     } else if (this.$route.path === '/center') {
       this.ind = 3
     }
-    console.log(this.$route.params, 111)
+    // console.log(this.$route.params, 111)
     axios.post('/middlemobile/app/queryEntry.htm',
       'timeStamp=1576844267508&uniqueId=15768107854190.773148202536406&tFlag=1&flowCode=15768107854200.967171246994305&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch'
     ).then(res => {
