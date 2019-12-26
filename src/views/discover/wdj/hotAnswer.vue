@@ -42,7 +42,7 @@ export default {
       this.datalist = res.data.detail.labelList
     })
     Axios.post('/middlemobile/discovery/questQuestionList.htm', 'timeStamp=1577169166275&uniqueId=15768107854190.773148202536406&tFlag=1&flowCode=15771485007830.5902942660332133&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch&pageNo=1&pageSize=20&sourceTypeId=1&labelIds=-1&parameterCharacteristics=-1').then(res => {
-      console.log(res.data.detail.questionList)
+    //   console.log(res.data.detail.questionList)
       this.items = res.data.detail.questionList
     })
   }
@@ -81,9 +81,9 @@ export default {
     background: #fff;
     padding: 0.1375rem 0.12rem 0 0.12rem;
     margin-top: 0.08rem;
-    position: relative;
+    // position: relative;
     .top{
-        position: relative;
+        // position: relative;
         h3{
             padding-left: 0.15rem;
             font-size: 18px;

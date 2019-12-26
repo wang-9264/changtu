@@ -76,7 +76,7 @@ export default {
 }
 .disnews{
     background: #f5f5f5;
-    margin-top: 0.34rem;
+    margin-top: 0.35rem;
     .disnews_item{
         width: 3.51rem;
         padding: 0.1375rem 0.12rem 0 0.12rem;

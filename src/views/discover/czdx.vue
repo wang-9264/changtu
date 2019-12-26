@@ -4,6 +4,7 @@
             <span class="iconfont icon-houtuishangyige" @click="handleclick()"></span>
             <p>车站动向</p>
         </div>
+        <div>
         <ul>
             <li v-for="data in datalist" :key="data.recTypeId">
                 <h3>{{data.title}}</h3>
@@ -29,6 +30,7 @@
                 </div>
             </li>
         </ul>
+        </div>
     </div>
 </template>
 <script>
@@ -86,6 +88,7 @@ export default {
 ul{
     width: 100%;
     list-style: none;
+    margin-top: 0.34rem;
     li{
         background: white;
         width: 3.51rem;
@@ -106,6 +109,12 @@ ul{
         p{
             font-size: 15px;
             color: #808080;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
         }
         .bottom{
             width: 3.51rem;

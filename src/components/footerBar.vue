@@ -30,7 +30,7 @@ export default {
     } else if (this.$route.path === '/center') {
       this.ind = 3
     }
-    console.log(this.$route.params, 111)
+    // console.log(this.$route.params, 111)
     axios.post('/middlemobile/app/queryEntry.htm',
       'timeStamp=1576844267508&uniqueId=15768107854190.773148202536406&tFlag=1&flowCode=15768107854200.967171246994305&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch'
     ).then(res => {
@@ -75,13 +75,15 @@ ul{
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 3.75rem;
+  width: 3.76rem;
+  // width: 100%;
   height: 0.49rem;
   list-style: none;
   box-shadow: -0.02rem -0.02rem 0.1rem 0 rgba(0,0,0,.2);
   li{
   flex: 1;
-   display: flex;
+  // justify-content: space-around;
+  display: flex;
   flex-direction:column;
   align-items:center;
   text-align: center;

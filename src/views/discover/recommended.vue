@@ -57,6 +57,7 @@ import Axios from 'axios'
 import swiper from './discocer_swiper'
 import Waterfall from 'vue-waterfall/lib/waterfall'
 import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot'
+import { Indicator } from 'mint-ui'
 export default {
 //   components: {
 //     Waterfall,
@@ -76,6 +77,10 @@ export default {
     WaterfallSlot
   },
   mounted () {
+    Indicator.open({
+      text: '加载中...',
+      spinnerType: 'fading-circle'
+    })
     Axios.post('/middlemobile/discovery/queryStickyMedia.htm', 'timeStamp=1576911232062&uniqueId=15768107854190.773148202536406&tFlag=1&flowCode=15768937226810.4433462746303658&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch').then(res => {
     //   console.log(res.data.detail)
       this.datalist = res.data.detail
@@ -93,12 +98,7 @@ export default {
       for (var data of this.items) {
         data.height = String((Number(data.height) * (172.5 / Number(data.width))) + 54)
       }
-
-    //   console.log(this.items, 11111111)
-    //   for (var j = 0; j < this.items.length; j++) {
-    //     this.lilist.push(((this.items[j].height)*(172.5/(this.items[j].width)))+92)
-    //     // console.log(this.lilist, 2222222222)
-    //   }
+      Indicator.close()
     })
   }
 }

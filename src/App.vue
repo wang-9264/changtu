@@ -13,7 +13,7 @@ export default {
     footerBar
   },
   mounted () {
-    console.log(this.$router.params)
+    // console.log(this.$router.params)
   }
 }
 </script>
