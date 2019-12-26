@@ -14,7 +14,7 @@
                 <waterfall :line-gap="172.5" :watch="items">
                 <waterfall-slot
                 v-for="(item, index) in items"
-                :width="item.width"
+                :width="172.5"
 
                 :height="item.height"
                 :order="index"
@@ -88,13 +88,13 @@ export default {
         if ((resp.data.detail.datInfoList[i]).seceneryInfo !== undefined) {
           this.items.push((resp.data.detail.datInfoList[i]).seceneryInfo)
         }
-        console.log(this.items)
+        // console.log(this.items)
       }
       for (var data of this.items) {
-        data.height = String(Number(data.height) + 400)
+        data.height = String((Number(data.height) * (172.5 / Number(data.width))) + 54)
       }
 
-      console.log(this.items)
+    //   console.log(this.items, 11111111)
     //   for (var j = 0; j < this.items.length; j++) {
     //     this.lilist.push(((this.items[j].height)*(172.5/(this.items[j].width)))+92)
     //     // console.log(this.lilist, 2222222222)
@@ -122,7 +122,7 @@ export default {
         // width: 0.21rem;
         height: 0.38rem;
         float: left;
-        margin-left: 0.01rem;
+        margin-left: 0.05rem;
         // margin-top: 0.05rem;
     }
     .remhotInfo{
@@ -134,6 +134,7 @@ export default {
             line-height: 12px;
             margin-top: 0.0325rem;
             margin-top: 0.05rem;
+            margin-left: 0.3rem;
             }
         }
 }
@@ -174,7 +175,7 @@ export default {
                         background: rgba(0,0,0,.5);
                         color: #fff;
                         border-radius: 0.2rem;
-                        line-height: 12px;
+                        line-height: 0.12rem;
                         padding: 0 1px 0 5px;
                         font-size: 12px;
                         text-align: center;

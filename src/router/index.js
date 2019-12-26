@@ -46,7 +46,8 @@ const routes = [
       },
       {
         path: 'city',
-        component: City
+        component: City,
+        redirect: '/login'
       },
       {
         path: '/discover',
