@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="myentry">
 
     <li v-for="(data,i) in datalist" :key="i">
        <!-- {{data.imageUrl}} -->
@@ -41,12 +41,15 @@ export default {
   *{
     list-style: none;
   }
+  .myentry{
+	  height:1.3rem;
+  }
   div{
     width: 100%;
     height:100%;
     li{
       a{
-        font-size: 1.25rem;
+        font-size:0.2rem;
             font-weight: 600;
             color: #fff;
       }
@@ -54,22 +57,18 @@ export default {
         width: 48.9%;
         float: left;
         position: relative;
-        margin:0.125rem
+        margin:0.02rem
 
     }
-    // &:nth-of-type(4){
-    //   margin: 10px !important;
-    //   height:500px;
-    // }
   }
   span{
     position:relative;
     display: block;
     float: left;
     width: 40%;
-    height:0.625rem;
-    margin-left:-10.625rem;
-    margin-top:1.4375rem
+    height:0.1rem;
+    margin-left:-1.57rem;
+    margin-top:0.19rem
 
   }
 
