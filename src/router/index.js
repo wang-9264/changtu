@@ -18,6 +18,7 @@ import ToAnswer from '../views/discover/wdj/ToAnswer'
 import Lpal from '../views/discover/lpal.vue'
 import Userset from '../views/login/userset.vue'
 import Guide from '../views/login/guide.vue'
+import About from '../views/login/about.vue'
 
 Vue.use(VueRouter)
 
@@ -74,6 +75,10 @@ const routes = [
   {
     path: '/guide',
     component: Guide
+  },
+  {
+    path: '/about',
+    component: About
   },
   {
     path: '/czdx',

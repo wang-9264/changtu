@@ -26,6 +26,9 @@ export default {
     },
     guide () {
       this.$router.push('/guide')
+    },
+    us () {
+      this.$router.push('/about')
     }
   }
 	 }
