@@ -19,6 +19,9 @@ import Lpal from '../views/discover/lpal.vue'
 import Userset from '../views/login/userset.vue'
 import Guide from '../views/login/guide.vue'
 import About from '../views/login/about.vue'
+import StartCity from '../views/index/startcity.vue'
+import ToCity from '../views/index/tocity.vue'
+import Isday from '../views/index/isday.vue'
 
 Vue.use(VueRouter)
 
@@ -31,6 +34,18 @@ const routes = [
   {
     path: '/index',
     component: Index
+  },
+  {
+    path: '/Startcity',
+    component: StartCity
+  },
+  {
+    path: '/Tocity',
+    component: ToCity
+  },
+  {
+    path: '/Isday',
+    component: Isday
   },
   {
     path: '/discover',
