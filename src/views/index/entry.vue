@@ -28,9 +28,9 @@ export default {
       'timeStamp=1577088324413&uniqueId=15768119515340.8027515278901425&tFlag=1&flowCode=15770882554680.6271856334028012&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch'
 
     ).then(res => {
-      console.log(res.data.detail.topEntry)
+      // console.log(res.data.detail.topEntry)
       this.datalist = res.data.detail.topEntry
-      console.log(this.datalist.imageUrl)
+      // console.log(this.datalist.imageUrl)
     })
   }
 }

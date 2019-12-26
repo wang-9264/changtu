@@ -2,7 +2,7 @@
     <div>
         <div class="top_bar">
             <span class="iconfont icon-houtuishangyige" @click="handleclick()"></span>
-            <p>balabala票</p>
+            <p>balabalaƱ</p>
         </div>
         <div class="disnews">
             <div class="disnews_item" v-for="data in datalist" :key="data.mediaReport.recId">
@@ -76,7 +76,7 @@ export default {
 }
 .disnews{
     background: #f5f5f5;
-    margin-top: 0.34rem;
+    margin-top: 0.35rem;
     .disnews_item{
         width: 3.51rem;
         padding: 0.1375rem 0.12rem 0 0.12rem;

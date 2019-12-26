@@ -6,8 +6,8 @@
       <p class="add" @click="to()">{{tocity}}</p>
     </div>
     <div class="top_2">
-      <p class="month" @click="istime">{{time}}</p>
-      <p class="week">{{week}}</p>
+      <p class="month" @click="istime()">{{time}}</p>
+      <!-- <p class="week" v-if="localStorage.getItem('startcity')?''">{{week}}</p> -->
     </div>
     <div class="top_3">
 
@@ -20,9 +20,9 @@
 export default {
   data () {
     return {
-      gocity: localStorage.getItem('startcity'),
-      tocity: localStorage.getItem('tocity'),
-      time: localStorage.getItem('time'),
+      gocity: '',
+      tocity: '',
+      time: '',
       week: ''
     }
   },
@@ -36,14 +36,28 @@ export default {
     istime () {
       this.$router.push('/Isday')
     }
-
+  },
+  mounted () {
+    //   var dt = new Date();
+    //   var weekDay = ["周天", "周一", "周二", "周三", "周四", "周五", "周六"];
+    //   this.week = weekDay[dt.getDay()]
+    if (localStorage.getItem('startcity')) {
+      this.gocity = localStorage.getItem('startcity')
+    } else {
+      this.gocity = '请选择'
+    }
+    if (localStorage.getItem('tocity')) {
+      this.tocity = localStorage.getItem('tocity')
+    } else {
+      this.tocity = '请选择'
+    }
+    if (localStorage.getItem('time')) {
+      this.time = localStorage.getItem('time')
+    } else {
+      this.time = '请选择'
+    }
+    // }
   }
-  // mounted() {
-  //   var dt = new Date();
-  //   var weekDay = ["周天", "周一", "周二", "周三", "周四", "周五", "周六"];
-  //   this.week = weekDay[dt.getDay()]
-
-  // }
 }
 </script>
 
@@ -74,9 +88,12 @@ export default {
       .add {
         float: right;
       }
-      .week{
+
+      .week {
         margin-left: 0.5rem;
+        display: block;
       }
+
       span {
         width: 0.41rem;
         height: 0.41rem;
@@ -84,7 +101,7 @@ export default {
         background-image: url(https://m.changtu.com/_nuxt/img/change_ico.fc2be47.png);
         background-repeat: no-repeat;
         background-size: 0.9rem 0.41rem;
-        margin-left: 0.85rem;
+        margin-left: 22%;
       }
     }
 
@@ -106,7 +123,7 @@ export default {
       .month {
         font-weight: 600;
         font-size: 0.21rem;
-        margin:0 0.2rem
+        margin: 0 0.2rem;
       }
 
       .week {

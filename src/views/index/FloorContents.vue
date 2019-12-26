@@ -71,7 +71,7 @@ export default {
       'app/queryFloorContents',
       'timeStamp=1577104012728&uniqueId=15768119515340.8027515278901425&tFlag=1&flowCode=15771039970630.9121480822136574&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch&startCityId=680201&endCityId=163497'
     ).then(res => {
-      console.log(res.data.data.floor[0].floorContents[2].choiceSceneryList)
+      // console.log(res.data.data.floor[0].floorContents[2].choiceSceneryList)
       this.dataleft = res.data.data.floor[0].floorContents[2].choiceSceneryList
       this.dataright = res.data.data.floor[0].floorContents[3].questionList
       this.datalist = res.data.data.floor[0].floorContents

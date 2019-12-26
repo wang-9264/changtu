@@ -43,7 +43,7 @@ export default {
       'timeStamp=1576842075752&uniqueId=15768119515340.8027515278901425&tFlag=1&flowCode=15768373571970.5958419551096625&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch&currentCityId=390073'
     ).then(res => {
       this.datalist = res.data.detail.advList
-      console.log(this.datalist)
+      // console.log(this.datalist)
       new Swiper('.swiper1', {
         loop: true,
         slidesPerView: 1,
