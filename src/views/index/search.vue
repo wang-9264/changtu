@@ -36,7 +36,6 @@ export default {
     istime () {
       this.$router.push('/Isday')
     }
-
   },
   mounted () {
     //   var dt = new Date();
@@ -58,6 +57,7 @@ export default {
       this.time = '请选择'
     }
     // }
+  }
   }
 }
 </script>
@@ -124,7 +124,7 @@ export default {
       .month {
         font-weight: 600;
         font-size: 0.21rem;
-        margin: 0 0.2rem
+        margin: 0 0.2rem;
       }
 
       .week {

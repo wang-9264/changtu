@@ -2,7 +2,7 @@
     <div>
         <div class="top_bar">
             <span class="iconfont icon-houtuishangyige" @click="handleclick()"></span>
-            <p>balabala票</p>
+            <p>balabalaƱ</p>
         </div>
         <div class="disnews">
             <div class="disnews_item" v-for="data in datalist" :key="data.mediaReport.recId">
