@@ -20,18 +20,18 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$route.path, this)
+    // console.log(this.$route.path, this)
     if (this.$route.path === '/index') {
       this.ind = 0
-      console.log('index')
+      // console.log('index')
     } else if (this.$route.path === '/discover/recommended') {
       this.ind = 1
-      console.log('/discover/recommended')
+      // console.log('/discover/recommended')
     } else if (this.$route.path === '/travel') {
       this.ind = 2
-      console.log('/travel')
+      // console.log('/travel')
     } else if (this.$route.path === '/center') {
-      console.log('/center')
+      // console.log('/center')
       this.ind = 3
     } else {
 
