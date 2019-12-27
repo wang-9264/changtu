@@ -76,9 +76,9 @@ export default {
       localStorage.setItem('tocity', item.showName)
       this.$router.push('/index')
     }
-    // sousuo() {
-    //   this.dataloot = this.list.filter(item => item.includes(this.inputValue))
-    // },
+    sousuo() {
+      this.dataloot = this.list.filter(item => item.includes(this.inputValue))
+    },
     // sora(index){
     //   // console.log(this.index = )
 
