@@ -2,7 +2,7 @@
   <div>
   <mybanner></mybanner>
    <search></search>
-   <entry></entry>
+   <!-- <entry></entry> -->
    <floorContents></floorContents>
     <myfooter></myfooter>
 
