@@ -35,6 +35,8 @@
 </template>
 <script>
 import Axios from 'axios'
+// import { mapState } from 'vuex'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 export default {
   data () {
     return {
@@ -55,6 +57,16 @@ export default {
       }
     //   console.log(this.datalist)
     })
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>

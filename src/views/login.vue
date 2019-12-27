@@ -56,6 +56,8 @@
  </template>
 
 <script>
+// import { mapState } from 'vuex'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
  	export default {
   data () {
     return {
@@ -89,6 +91,16 @@
       }
       // console.log(index,this.$refs.change[index],11)
     }
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
  	}
 </script>

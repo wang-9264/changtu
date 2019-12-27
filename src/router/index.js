@@ -18,7 +18,7 @@ import ToAnswer from '../views/discover/wdj/ToAnswer'
 import Lpal from '../views/discover/lpal.vue'
 import Userset from '../views/login/userset.vue'
 import Guide from '../views/login/guide.vue'
-import About from '../views/login/about.vue'
+import AboutTrip from '../views/login/abouttrip.vue'
 import StartCity from '../views/index/startcity.vue'
 import ToCity from '../views/index/tocity.vue'
 import Isday from '../views/index/isday.vue'
@@ -26,11 +26,6 @@ import Isday from '../views/index/isday.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: Home
-  // },
   {
     path: '/index',
     component: Index
@@ -93,8 +88,8 @@ const routes = [
     component: Guide
   },
   {
-    path: '/about',
-    component: About
+    path: '/abouttrip',
+    component: AboutTrip
   },
   {
     path: '/czdx',
@@ -127,7 +122,7 @@ const routes = [
     component: Blblp
   },
   {
-    path: '/',
+    path: '*',
     redirect: '/index'
   }
 ]
