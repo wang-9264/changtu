@@ -16,7 +16,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-html,body{
-    background: #f5f5f5;
-}
 </style>
