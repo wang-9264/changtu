@@ -102,7 +102,7 @@ export default {
 
  <style lang="scss" scoped>
 #centerWarp{
-	height: 7rem;
+	height: 6.15rem;
 	background: #f5f5f5 url(https://m.changtu.com/_nuxt/img/changBg.46f1cef.png) no-repeat center 4rem;
 	background-size:1.5rem ;
  		.usersection{
