@@ -65,6 +65,9 @@
  					</div>
  				</div>
  			</div>
+		<div class="c-top">
+				C-TOP会员
+		</div>
  		</div>
  	</div>
  </template>
@@ -98,7 +101,10 @@ export default {
 </script>
 
  <style lang="scss" scoped>
-
+#centerWarp{
+	height: 7rem;
+	background: #f5f5f5 url(https://m.changtu.com/_nuxt/img/changBg.46f1cef.png) no-repeat center 4rem;
+	background-size:1.5rem ;
  		.usersection{
  			width: 100%;
  			height:2.55rem;
@@ -182,6 +188,19 @@ export default {
  					}
  				}
  		}
+		.c-top{
+			width: 1.06rem;
+			height: 0.28rem;
+			background: #171C19;
+			position: fixed;
+			right: 0;
+			bottom: 0.55rem;
+			text-align: center;
+			color: white;
+			font-size: 0.14rem;
+			line-height: 0.28rem;
+			border-radius: 0.3rem;
+		}
  		}
-
+}
  </style>
