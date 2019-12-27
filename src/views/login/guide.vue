@@ -107,7 +107,7 @@ export default {
 		list-style: none;
 	}
 	#guideWrap{
-
+background: #f5f5f5;
 	.goback{
 		height: 0.5rem;
 		display: flex;
