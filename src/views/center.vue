@@ -65,7 +65,7 @@
  					</div>
  				</div>
  			</div>
-		<div class="c-top">
+		<div class="c-top" @click="handeleClick()">
 				C-TOP会员
 		</div>
  		</div>
