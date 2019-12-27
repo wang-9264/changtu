@@ -19,6 +19,8 @@
 </template>
 
 <script>
+// import { mapState } from 'vuex'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 export default {
   methods: {
     backClick () {
@@ -28,8 +30,18 @@ export default {
       this.$router.push('/guide')
     },
     us () {
-      this.$router.push('/about')
+      this.$router.push('/abouttrip')
     }
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 	 }
 </script>

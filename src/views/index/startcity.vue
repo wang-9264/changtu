@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     sora (item) {
-      console.log(item[0])
+      // console.log(item[0])
       localStorage.setItem('startcity', item.showName)
       this.$router.push('/index')
     },

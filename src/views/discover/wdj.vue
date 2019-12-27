@@ -11,6 +11,8 @@
 </template>
 <script>
 import wdjBar from './wdj/wdj_Bar'
+// import { mapState } from 'vuex'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 // import Axios from 'axios'
 export default {
   components: {
@@ -20,6 +22,16 @@ export default {
     handleclick () {
       this.$router.back()
     }
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>

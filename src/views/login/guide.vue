@@ -1,7 +1,7 @@
 <template>
 	<div id="guideWrap" >
 		<div class="goback">
-			<i class="iconfont icon-houtuishangyige" @click="to()"></i>
+			<i class="iconfont icon-houtuishangyige" @click="goclick()"></i>
 			<span>购票指南</span>
 			<span>新手指南</span>
 		</div>
@@ -14,7 +14,7 @@
 	  freeMode: true,
 	}" class="boards" swipername="boards" v-if="datalist.length" >
 	<ul class="swiper-slide" v-for="(data,index) in datalist" :key="index" >
-	    <li :class="index===ind? 'boardname'  : ' '" @click="bordes(index)">{{data.boardName}}</li>
+	    <li :class="index===inds? 'boardname'  : ' '" @click="bordes(index)">{{data.boardName}}</li>
 	</ul>
 	</swiper>
 	</div>
@@ -43,11 +43,12 @@
 <script>
 import Axios from 'axios'
 import swiper from '@/components/swiper'
-
+// import { mapState } from 'vuex'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 export default {
 	  data () {
 	    return {
-      ind: 0,
+      inds: 0,
 		  list: [],
 	      datalist: [],
 		  eee: null
@@ -57,14 +58,15 @@ export default {
 	    swiper
 	  },
 	  mounted () {
-	      Axios.post('https://mbase.changtu.com/about/queryNewsBoards',
+		  this.$store.commit(Tabbarhide)
+	      Axios.post('/about/queryNewsBoards',
       'timeStamp=1577259881593&uniqueId=15768105475990.3552099713412391&tFlag=1&flowCode=15771917144980.6634046297564555&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch&boardEnName=commonQs'
     ).then(res => {
 	        // console.log(res.data)
 
 	        this.datalist = res.data.data
     })
-    Axios.post('https://mbase.changtu.com/about/queryNewsContents',
+    Axios.post('/about/queryNewsContents',
       'timeStamp=1577260450167&uniqueId=15768105475990.3552099713412391&tFlag=1&flowCode=15771917144980.6634046297564555&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch&boardEnName=takeTicketsQs'
 
     ).then(res => {
@@ -72,17 +74,27 @@ export default {
     })
   },
   methods: {
-	  to () {
+	  goclick () {
       this.$router.push('/center')
 	  },
 	 bordes (index) {
-		  this.ind = index
+		  this.inds = index
 		   this.eee.slideTo(index + 1, 1000, false)
 	 	  },
 	 	  ww (swipes) {
 	 		  // console.log(swipes,"fuchuNs")
 			  this.eee = swipes
 	 	  }
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>

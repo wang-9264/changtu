@@ -1,6 +1,6 @@
 <template>
 	<div id="about">
-		<div class="goto" @click="go()">
+		<div class="goto" @click="goclick()">
 			<span class="iconfont icon-houtuishangyige"></span>
 			<span>关于畅途</span>
 			<span class="iconfont icon-icon--"></span>
@@ -27,11 +27,26 @@
 </template>
 
 <script>
+// import { mapState } from 'vuex'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 export default {
   methods: {
-    go () {
+    goclick () {
       this.$router.push('/center')
     }
+  },
+  mounted () {
+    this.$store.commit(Tabbarhide)
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>

@@ -20,15 +20,21 @@ export default {
     }
   },
   mounted () {
-    // console.log(this.$route.path, 2222)
+    console.log(this.$route.path, this)
     if (this.$route.path === '/index') {
       this.ind = 0
+      console.log('index')
     } else if (this.$route.path === '/discover/recommended') {
       this.ind = 1
-    } else if (this.route.path === '/travel') {
+      console.log('/discover/recommended')
+    } else if (this.$route.path === '/travel') {
       this.ind = 2
+      console.log('/travel')
     } else if (this.$route.path === '/center') {
+      console.log('/center')
       this.ind = 3
+    } else {
+
     }
     // console.log(this.$route.params, 111)
     axios.post('/middlemobile/app/queryEntry.htm',

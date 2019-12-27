@@ -13,6 +13,10 @@ module.exports = {
       'app': {
         target: 'https://mbase.changtu.com',
         changeOrigin: true
+      },
+      'about': {
+        target: 'https://mbase.changtu.com',
+        changeOrigin: true
       }
     }
   }
