@@ -13,6 +13,7 @@
 </template>
 <script>
 import Calendar from 'vue-calendar-component'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 export default {
   components: {
     Calendar
@@ -32,6 +33,16 @@ export default {
       this.$router.push('/index')
     }
 
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>

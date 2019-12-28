@@ -26,6 +26,7 @@
 <script>
 import axios from 'axios'
 import Vue from 'vue'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 import {
   IndexList,
   IndexSection
@@ -78,6 +79,16 @@ export default {
     //     window.localStorage.setItem('nowNm',nm);
     //     window.localStorage.setItem('nowId',id);
     //     this.$router.push('/movie/nowPlaying');
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>

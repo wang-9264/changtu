@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 export default {
 
   // el: "#app",
@@ -153,6 +154,16 @@ export default {
       }
       this.index = index
     }
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 
 }

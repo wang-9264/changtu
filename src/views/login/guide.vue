@@ -75,7 +75,7 @@ export default {
   },
   methods: {
 	  goclick () {
-      this.$router.push('/center')
+      this.$router.go(-1)
 	  },
 	 bordes (index) {
 		  this.inds = index

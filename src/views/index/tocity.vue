@@ -20,6 +20,7 @@
 <script>
 import axios from 'axios'
 import Vue from 'vue'
+import { Tabbarhide, Tabbarshow } from '@/store/type'
 import {
   IndexList,
   IndexSection
@@ -58,6 +59,16 @@ export default {
     goback () {
       this.$router.push('/index')
     }
+  },
+  beforeMount () {
+    // this.$store.state.isShow = false;
+    this.$store.commit(Tabbarhide)
+    // this.$store.commit("show");
+  },
+
+  beforeDestroy () {
+    // this.$store.state.isShow = true;
+    this.$store.commit(Tabbarshow)
   }
 }
 </script>
