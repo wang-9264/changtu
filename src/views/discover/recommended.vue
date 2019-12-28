@@ -175,8 +175,8 @@ export default {
                         background: rgba(0,0,0,.5);
                         color: #fff;
                         border-radius: 0.2rem;
-                        line-height: 0.12rem;
-                        padding: 0 1px 0 5px;
+                        line-height: 0.2rem;
+                        padding: 0 5px 0 5px;
                         font-size: 12px;
                         text-align: center;
                         width: 0.545rem;
@@ -185,7 +185,7 @@ export default {
                         text-overflow: ellipsis;
                         }
                     .top_right{
-                        height: 0.1rem;
+                        height: 0.12rem;
                         position: absolute;
                         right:0.1rem;
                         bottom: 0.2rem;
@@ -194,7 +194,7 @@ export default {
                         color: #fff;
                         border-radius: 0.2rem;
                         line-height: 12px;
-                        padding: 0 1px 0 5px;
+                        padding: 0 5px 0 5px;
                         font-size: 12px;
                         text-align: center;
                     }

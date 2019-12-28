@@ -116,6 +116,7 @@ import { Tabbarhide, Tabbarshow } from '@/store/type'
 	.landing{
 		background: white;
 		width: 100%;
+		height: 100%;
 	.top{
 		width: 100%;
 		height: 2.4rem;
@@ -145,7 +146,7 @@ import { Tabbarhide, Tabbarshow } from '@/store/type'
 			}
 		.buttom{
 			width: 100%;
-			height: 3.5rem;
+			height: 4.4rem;
 			background:white;
 			.judegtext{
 				width: 2.8rem;
