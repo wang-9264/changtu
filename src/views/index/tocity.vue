@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     sora (item) {
-      console.log(item)
+      // console.log(item)
       localStorage.setItem('tocity', item.showName)
       this.$router.push('/index')
     },

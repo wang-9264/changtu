@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     handleclick () {
-      this.$router.back()
+      this.$router.push('/discover')
     }
   },
   beforeMount () {
