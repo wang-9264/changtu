@@ -22,6 +22,7 @@ import AboutTrip from '../views/login/abouttrip.vue'
 import StartCity from '../views/index/startcity.vue'
 import ToCity from '../views/index/tocity.vue'
 import Isday from '../views/index/isday.vue'
+import Lottery from '../views/index/lottery.vue'
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,9 @@ const routes = [
   {
     path: '/Isday',
     component: Isday
+  },
+  { path: '/lotte',
+    component: Lottery
   },
   {
     path: '/discover',
@@ -122,7 +126,7 @@ const routes = [
     component: Blblp
   },
   {
-    path: '*',
+    path: '/',
     redirect: '/index'
   }
 ]

@@ -1,14 +1,14 @@
 <template>
   <div class="myentry">
 
-    <li v-for="(data,i) in datalist" :key="i">
+    <li v-for="(data,i) in datalist" :key="i" @click="linghongbao(i)">
        <!-- {{data.imageUrl}} -->
-      <a href="">
+     <!-- <a href=""> -->
         <img :src=data.imageUrl alt="">
-        <span>
+        <span class="isa">
           {{data.entryName}}
         </span>
-      </a>
+      <!-- </a> -->
     </li>
 
   </div>
@@ -21,6 +21,15 @@ export default {
     return {
       datalist: []
     }
+  },
+  methods: {
+	  linghongbao (i) {
+      if (i === 1) {
+		  this.$router.push('/lotte')
+      } else {
+
+      }
+	  }
   },
   mounted () {
     axios.post(
@@ -48,7 +57,7 @@ export default {
     width: 100%;
     height:100%;
     li{
-      a{
+      .isa{
         font-size:0.2rem;
             font-weight: 600;
             color: #fff;

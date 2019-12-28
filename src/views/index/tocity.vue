@@ -1,39 +1,19 @@
 <template>
   <div class="mybody" ref="city_List">
-    <div>
-     <span>
-        &lt;
-        </span> 出发地<span>
-      </span>
+    <div class="head">
+      <span class="iconfont icon-houtuishangyige icon" @click="goback()"></span>
+      <p class="chufadi"> 出发地</p>
     </div>
-    <input type="text" v-model="inputValue" @input="sousuo()">
-    <div class="suoyin">热门城市</div>
-    <div class="hot">
-      <li class="hotcity" v-for="(data,index) in datalist" :key="index">
-        {{data.CITY_NAME_DESC}}
-      </li>
+    <div class="yangshi">
+      <mt-index-list>
+        <mt-index-section v-for="(data,index) in dataloot" :key="index" :index="index">
+          <div @click="sora(item)" v-for="(item,index2) in data" :key="index2">
+            <mt-cell :key="index2" :title="item.showName">
+            </mt-cell>
+          </div>
+        </mt-index-section>
+      </mt-index-list>
     </div>
-    <div class="nav_right" ref="city_sort">
-      <li class="nav_r"  v-for="(data,index) in dataloot" :key="index" @click="sora(index)">
-        <h4 ref="myid" class="d_right">
-          {{index}}
-        </h4>
-      </li>
-    </div>
-
-       <li v-for="(data,index) in dataloot" :key="index">
-      <div>
-        <div class="suoyin" ref="myid">
-          {{index}}
-        </div>
-        <ul>
-          <li class="city" v-for="(item,index2) in data" :key="index2" @click="sora(item)">
-            {{item.showName}}
-          </li>
-        </ul>
-      </div>
-    </li>
-
   </div>
 </template>
 
@@ -62,58 +42,49 @@ export default {
       'timeStamp=1577013417634&uniqueId=15768119515340.8027515278901425&tFlag=1&flowCode=15770108049400.4377382064974249&orderSourceId=10322&orderChannel=1&orderSourceName=%E7%95%85%E9%80%94%E7%BD%91--%E8%A7%A6%E5%B1%8F%E7%89%88--%E6%96%B0%E7%89%88&channelEnvWord=touch&ruleValue=ticket'
 
     ).then(res => {
-      // console.log(res.data)
-      // console.log(res.data.detail.hotBookList)
-
       this.datalist = res.data.detail.hotBookList
       this.dataloot = res.data.detail.allBookCityMap
-      // console.log(this.dataloot)
     })
   },
   methods: {
     sora (item) {
-      // console.log(item[0])
+      console.log(item)
       localStorage.setItem('tocity', item.showName)
       this.$router.push('/index')
-    }
-    sousuo() {
+    },
+    sousuo () {
       this.dataloot = this.list.filter(item => item.includes(this.inputValue))
     },
-    // sora(index){
-    //   // console.log(this.index = )
-
-    //   // console.log(this.$refs.myid[index])
-    //   // console.log(index.CITY_FIRST_LETTER)
-    //   console.log($refs.CITY_FIRST_LETTER)
-    // }
-
-  },
-  sora (index) { // 点击左侧字母跳到对应的内容块
-    // var h4 = getElementsByTagName(this.index);
-    // console.log(index.offsetTop)
-    // this.$refs.city_sort.parentNode.scrollTop = this.index.offsetTop;
-    //     this.$refs.city_List.toScrollTop(-h4[index].offsetTop);
-    // },
-    // handleToCity(nm,id){
-    //     this.$store.commit('city/CITY_INFO',{ nm , id });
-    //     window.localStorage.setItem('nowNm',nm);
-    //     window.localStorage.setItem('nowId',id);
-    //     this.$router.push('/movie/nowPlaying');
+    goback () {
+      this.$router.push('/index')
+    }
   }
 }
-
 </script>
 
 <style scoped>
-  .mybody{
+  .mybody {
     position: relative;
-  }
-  h4{
+    background: #fff;
     overflow: hidden;
-
   }
+
+  h4 {
+    overflow: hidden;
+  }
+
+  .sou {
+    background: #CCCCCC;
+    width: 90%;
+    border-radius: 0.2rem;
+  }
+
   input {
     width: 100%;
+  }
+
+  .yangshi {
+    height: 100%;
   }
 
   li {
@@ -128,12 +99,30 @@ export default {
     border-radius: 15px;
   }
 
+  .chufadi {
+    text-align: center;
+    line-height: 0.44rem;
+    font-size: 0.18rem;
+  }
+
+  .icon {
+    font-size: 0.25rem;
+    color: #f60;
+    line-height: 0.44rem;
+    float: left;
+    margin-left: 0.05rem;
+  }
+
   .d_right {
     text-align: center;
   }
 
   .nav_r {
     height: 17px;
+  }
+
+  .head {
+    display: flex;
   }
 
   .hotcity {

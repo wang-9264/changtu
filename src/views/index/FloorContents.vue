@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mybody">
-      <li class="top_li" v-for="(data,index) in datalist" :key="index">
+      <li class="top_li" v-for="(data,index) in datalist" :key="index" @click="zhinan(index)">
         <div class="sora">
           <div class="top_1">
             <h3>{{data.contentTitle}}</h3>
@@ -86,6 +86,15 @@ export default {
         }
       })
     })
+  },
+  methods: {
+    zhinan (index) {
+      if (index === 0) {
+        this.$router.push('/guide')
+      } else {
+
+      }
+    }
   }
 }
 </script>
@@ -144,7 +153,7 @@ export default {
   }
 
   .bbb {
-    margin-left: 0.05rem;
+    margin-left: 0.1rem;
   }
 
   .bon_l {
@@ -166,6 +175,8 @@ export default {
 
   .banImg {
     height: 1rem;
+    width: 100%;
+    margin: 0 10px;
   }
 
   .span2 {

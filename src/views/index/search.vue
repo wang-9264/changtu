@@ -5,10 +5,12 @@
       <span></span>
       <p class="add" @click="to()">{{tocity}}</p>
     </div>
+
     <div class="top_2">
       <p class="month" @click="istime()">{{time}}</p>
       <!-- <p class="week" v-if="localStorage.getItem('startcity')?''">{{week}}</p> -->
     </div>
+
     <div class="top_3">
 
       <button>搜索汽车票</button>
@@ -95,13 +97,17 @@ export default {
       }
 
       span {
-        width: 0.41rem;
-        height: 0.41rem;
-        display: inline-block;
-        background-image: url(https://m.changtu.com/_nuxt/img/change_ico.fc2be47.png);
-        background-repeat: no-repeat;
-        background-size: 0.9rem 0.41rem;
-        margin-left: 22%;
+            width: 0.41rem;
+            height: 0.41rem;
+            display: block;
+            background-image: url(https://m.changtu.com/_nuxt/img/change_ico.fc2be47.png);
+            background-repeat: no-repeat;
+            background-size: 0.9rem 0.41rem;
+            /* margin-left: 21%; */
+            position: absolute;
+            /* clear: both; */
+            /* text-align: center; */
+            left: 45%;
       }
     }
 

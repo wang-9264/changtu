@@ -3,23 +3,51 @@
     <div class="head">
       <span>
         <span class="iconfont icon-houtuishangyige icon" @click="goback()"></span>
-      <p class="chufadi"> 出发地</p>
+        <p class="chufadi"> 出发地</p>
       </span>
     </div>
-    <!-- <input type="text" v-model="inputValue" @input="sousuo()"> -->
-    <div class="suoyin">热门城市</div>
-    <div class="hot">
-      <mt-index-list>
-      <li class="hotcity" v-for="(data,index) in datalist" :key="index">
-        {{data.CITY_NAME_DESC}}
-      </li>
 
+    <div class="city_searchBox" ref="search">
+      <input class="" type="text">
+    </div>
+    <mt-index-list>
       <mt-index-section v-for="(item,index) in dataloot" :key="index" :index="index">
         <mt-cell v-for="(list,indexList) in item" :key="indexList" :title="list.showName">
         </mt-cell>
       </mt-index-section>
     </mt-index-list>
-    </div>
+    <!--  <mt-index-section index="B">
+    <mt-cell title="Baldwin"></mt-cell>
+    <mt-cell title="Braden"></mt-cell>
+  </mt-index-section>
+  ...
+  <mt-index-section index="Z">
+    <mt-cell title="Zack"></mt-cell>
+    <mt-cell title="Zane"></mt-cell>
+  </mt-index-section> -->
+    <!-- </mt-index-list>
+ -->
+    <!--    <div class="nav_right" ref="city_sort">
+      <li class="nav_r"  v-for="(data,index) in dataloot" :key="index" @click="sora(index)">
+        <h4 ref="myid" class="d_right">
+          {{index}}
+        </h4>
+      </li>
+    </div> -->
+
+    <!--       <li v-for="(data,index) in dataloot" :key="index">
+      <div>
+        <div class="suoyin" ref="myid">
+          {{index}}
+        </div>
+        <ul>
+          <li class="city" v-for="(item,index2) in data" :key="index2" @click="sora(item)">
+            {{item.showName}}
+          </li>
+        </ul>
+      </div>
+    </li>
+ -->
   </div>
 </template>
 
@@ -59,12 +87,33 @@ export default {
   methods: {
     sora (item) {
       // console.log(item[0])
-      localStorage.setItem('startcity', item.showName)
+      localStorage.setItem('tocity', item.showName)
       this.$router.push('/index')
-    },
-    goback () {
-      this.$router.go(-1)
     }
+
+    // goback() {
+    //   this.$router.push('/index')
+    // },
+    // regItem(item) {
+    //   let regVal = new RegExp(this.searchVal)
+    //   return regVal.test(item.cityPl) || regVal.test(item.showName);
+    // },
+    // regListItem(item) {
+    //   let regVal = new RegExp(this.searchVal)
+    //   for (let i = 0; i < item.length; i++) {
+    //     if (regVal.test(item[i].cityPl) || regVal.test(item[i].showName)) {
+    //       return true;
+    //     }
+    //   }
+    // }
+
+    // sora(index){
+    //   // console.log(this.index = )
+
+    //   // console.log(this.$refs.myid[index])
+    //   // console.log(index.CITY_FIRST_LETTER)
+    //   console.log($refs.CITY_FIRST_LETTER)
+    // }
 
   },
   sora (index) { // 点击左侧字母跳到对应的内容块
@@ -83,24 +132,6 @@ export default {
 </script>
 
 <style scoped>
-  .head {
-    height: 0.44rem;
-    width: 100%;
-  }
-  .chufadi{
-    text-align: center;
-    line-height: 0.44rem;
-    font-size: 0.18rem;
-  }
-
-  .icon {
-    font-size: 0.25rem;
-    color: #f60;
-    line-height: 0.44rem;
-    float: left;
-    margin-left: 0.05rem;
-  }
-
   .mybody {
     position: relative;
     background: #fff;
@@ -108,7 +139,12 @@ export default {
 
   h4 {
     overflow: hidden;
+  }
 
+  .sou {
+    background: #CCCCCC;
+    width: 90%;
+    border-radius: 0.2rem;
   }
 
   input {
@@ -125,6 +161,20 @@ export default {
     top: 136px;
     background: #CCCCCC;
     border-radius: 15px;
+  }
+
+  .chufadi {
+    text-align: center;
+    line-height: 0.44rem;
+    font-size: 0.18rem;
+  }
+
+  .icon {
+    font-size: 0.25rem;
+    color: #f60;
+    line-height: 0.44rem;
+    float: left;
+    margin-left: 0.05rem;
   }
 
   .d_right {

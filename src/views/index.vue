@@ -1,10 +1,11 @@
 <template>
   <div>
-  <mybanner></mybanner>
-   <search></search>
-   <!-- <entry></entry> -->
-   <floorContents></floorContents>
+   <mybanner></mybanner>
+    <search></search>
+    <entry></entry>
+    <floorContents></floorContents>
     <myfooter></myfooter>
+    <!-- <lottery></lottery> -->
 
     <!-- <startcity></startcity> -->
     <!-- <tocity></tocity> -->
@@ -21,6 +22,7 @@ import entry from './index/entry.vue'
 import myfooter from './index/myfooter.vue'
 import search from './index/search.vue'
 import mybanner from './index/mybanner.vue'
+// import lottery from './index/lottery.vue'
 // import isday from './index/isday.vue'
 
 export default {
@@ -32,6 +34,7 @@ export default {
     myfooter,
     search,
     mybanner
+    // lottery
     // isday
 
   }
@@ -42,6 +45,7 @@ export default {
     margin: 0;
     padding: 0;
   }
+
   banner {
     margin-top: 20px;
   }

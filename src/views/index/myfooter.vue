@@ -44,10 +44,14 @@ height: 20px;
   .midText {
     position: absolute;
     display: block;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 8px;
     padding: 0 5px;
+  }
+  a{
+    color: #333;
+    text-decoration: none;
   }
 </style>
